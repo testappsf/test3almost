@@ -15,6 +15,7 @@ def get_client_ip(request):
     return ip
 def home(request):
     return render(request,'home.html')
+    
 def terminate(request):
     if request.method =='GET':
         fm = punches(request.GET)
