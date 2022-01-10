@@ -24,7 +24,7 @@ TEMPLATES_DIR = BASE_DIR/'templates'
 SECRET_KEY = 'django-insecure-g#%t+#ygu(r&)7+skdqsv4*a_gb706ca91l^)p696#8d(1i3pc'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['127.0.0.1:8000','dashboard-nextest.herokuapp.com']
 
@@ -43,6 +43,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
