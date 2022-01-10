@@ -5,7 +5,16 @@ from .models import Linksinfo
 from .forms import punches
 import datetime
 # Create your views here.
-
+def get_client_ip(request):
+    x_forwarded_for = request.META.get('HTTP_X_FORWARDED_FOR')
+    print(x_forwarded_for)
+    if x_forwarded_for:
+        ip = x_forwarded_for.split(',')[0]
+    else:
+        ip = request.META.get('REMOTE_ADDR')
+    return ip
+def home(request):
+    return render(request,'home.html')
 def terminate(request):
     if request.method =='GET':
         fm = punches(request.GET)
@@ -38,11 +47,3 @@ def terminate(request):
         return HttpResponse('<h1>Something went Wrong</h1>')
 
 
-def get_client_ip(request):
-    x_forwarded_for = request.META.get('HTTP_X_FORWARDED_FOR')
-    print(x_forwarded_for)
-    if x_forwarded_for:
-        ip = x_forwarded_for.split(',')[0]
-    else:
-        ip = request.META.get('REMOTE_ADDR')
-    return ip
