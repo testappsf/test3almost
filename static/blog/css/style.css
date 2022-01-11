@@ -1,0 +1,84 @@
+body {
+  background-color: rgb(29, 29, 29);
+  color: antiquewhite;
+
+}
+
+.form-control,
+ .form-control:focus{
+  background-color: rgb(182, 172, 172);
+}
+
+
+.jumbo-color{
+  background-color: rgb(119, 108, 108);
+}
+
+<style>
+.page-title-area {
+    height: 350px;
+    position: relative;
+    z-index: 1;
+    background-image: url(/assets/frontend/assets/img/redirect-image.jpg);
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.page-title-content {
+  margin-top: 20px;
+  font-family: "Muli", sans-serif;
+  position: relative;
+  z-index: 4;
+}
+
+.page-title-content h1 {
+  color: #ffffff;
+  margin-bottom: 13px;
+  font-size: 45px;
+  font-weight: 500;
+}
+
+.page-title-content ul {
+  padding-left: 0;
+  margin-bottom: 0;
+  list-style-type: none;
+}
+
+.page-title-content ul li {
+  display: inline-block;
+  position: relative;
+  margin: 0 13px;
+  color: #333;
+}
+
+.page-title-content ul li a {
+  display: inline-block;
+  color: #1c5c93;
+}
+
+.page-title-content ul li a:hover {
+  color: #333;
+}
+
+.page-title-content ul li::before {
+  content: '';
+  position: absolute;
+  right: -18px;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  width: 8px;
+  height: 8px;
+  background: #ffffff;
+  border-radius: 50%;
+}
+
+.page-title-content ul li:last-child::before {
+  display: none;
+}
+
+.page-title-content ul li:first-child {
+  margin-left: 0;
+}
+
+</style>

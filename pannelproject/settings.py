@@ -24,9 +24,10 @@ TEMPLATES_DIR = BASE_DIR/'templates'
 SECRET_KEY = 'django-insecure-g#%t+#ygu(r&)7+skdqsv4*a_gb706ca91l^)p696#8d(1i3pc'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['dashboard-nextest.herokuapp.com']
+# ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -118,7 +119,12 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
+
+
 STATIC_URL = 'static/'
+STATIC_DIR =  BASE_DIR/'static'
+STATICFILES_DIRS =[STATIC_DIR]
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
@@ -128,5 +134,5 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
 # Deployment code changes
-# import django_heroku
-# django_heroku.settings(locals())
+import django_heroku
+django_heroku.settings(locals())

@@ -13,6 +13,7 @@ def get_client_ip(request):
     else:
         ip = request.META.get('REMOTE_ADDR')
     return ip
+    
 def home(request):
     return render(request,'home.html')
     
@@ -41,7 +42,7 @@ def terminate(request):
             print(completionTime)
             print(status)
             print(get_client_ip(request));
-            return render(request,'dashboard/terminate.html',{'UID':uid,'PID':pid,'IP':ip,'sys':systemTime,'comt':completionTime})
+            return render(request,'dashboard/terminate.html',{'UID':uid,'PID':pid,'IP':ip,'sys':systemTime,'comt':completionTime,'STATUS':status})
         else:
             return HttpResponse('<h1> form is valid but unable to punch</h1>')
     else:
