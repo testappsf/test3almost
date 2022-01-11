@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 """
 
 from pathlib import Path
-
+import os
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 TEMPLATES_DIR = BASE_DIR/'templates'
@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-g#%t+#ygu(r&)7+skdqsv4*a_gb706ca91l^)p696#8d(1i3pc
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['dashboard-nextest.herokuapp.com']
+ALLOWED_HOSTS = ['dashboard-nextest.herokuapp.com',]
 # ALLOWED_HOSTS = []
 
 
@@ -122,8 +122,8 @@ USE_TZ = True
 
 
 STATIC_URL = 'static/'
-STATIC_DIR =  BASE_DIR/'staticfiles/static'
-STATICFILES_DIRS =[STATIC_DIR]
+STATIC_DIR =  BASE_DIR/'static'
+# STATICFILES_DIRS =[STATIC_DIR]
 
 MEDIA_ROOT=BASE_DIR/'media'
 MEDIA_URL='/media/'
