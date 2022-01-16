@@ -1,3 +1,5 @@
+from re import T
+from weakref import proxy
 from django.db import models
 
 # Create your models here.
@@ -13,3 +15,8 @@ class Linksinfo(models.Model):
 
     def __str__(self):
         return self.uid
+
+class ViewLinksData(Linksinfo):
+    class Meta:
+        proxy = True
+        ordering = ['-id']

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+</head>
+<body>
+    <h1>Dashboard</h1>
+    <form action="" method="post">
+        {% csrf_token %}
+        <label for="Uid">uid</label>
+        <input type="text" name="u_id" id="UID">
+        <label for="Pid">PID</label>
+        <input type="text" name="p_id" id="Uid">
+        <button type="submit">filter</button>
+    </form>
+    <table border="1">
+        <tr>
+            <th>S No.</th>
+            <th>user ID</th>
+            <th>Project ID</th>
+            <th>Status</th>
+            <th>Ip Address</th>
+
+            <th>System time</th>
+            <th>Completion time</th>
+        </tr>
+        
+        {% for i in page_obj %}
+        <tr>
+            <td>1</td>
+            <td> {{i.uid}}</td>
+            <td> {{i.pid}}</td>
+            <td>{{i.status}}</td>
+            <td>{{i.ip}}</td>
+            <td>{{i.systemTime}}</td>
+            <td>{{i.completionTime}}</td>
+        </tr>
+     {% endfor %} 
+      
+    </table>
+    <span>counts  :{{page_obj.paginator.count}}</span><br>
+    <span>
+        
+        {% if page_obj.has_previous %}
+        <a href="?page={{page_obj.previous_page_number}}">prev.</a>
+        {% endif %}
+        <span>{{page_obj.number}} {{page_obj.paginator.page_range}}</span>
+        {% if page_obj.has_next %}
+        <a href="?page={{page_obj.next_page_number}}">next</a>
+        {% endif %}
+    </span>
+    
+    
+</body>
+</html>
