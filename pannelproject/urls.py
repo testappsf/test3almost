@@ -23,7 +23,7 @@ from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from . import settings
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('',v.home),
+    path('/',v.home),
     path('redirect/terminate/', v.terminate),
     path('redirect/quotafull/',v.quotafull),
     path('redirect/complete/',v.complete),
