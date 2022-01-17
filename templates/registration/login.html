@@ -7,8 +7,12 @@
     <title>Document</title>
 </head>
 <body>
-    <H1>Homepage</H1>
+    <form action="" method="post">
+        {% csrf_token %}
+        {{form.as_p}}
+        <button type="submit">login</button>
+    </form>
 
-    <a href="{% url 'login' %}">login</a>
+    
 </body>
 </html>

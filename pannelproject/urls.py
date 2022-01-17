@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path,include
-from Dashboard import views
+from Dashboard import views as v
 
 
 from django.contrib.staticfiles.urls import static
@@ -23,8 +23,13 @@ from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from . import settings
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('',views.home),
-    path('redirect/',include('Dashboard.urls')),
+    path('',v.home),
+    path('redirect/terminate/', v.terminate),
+    path('redirect/quotafull/',v.quotafull),
+    path('redirect/complete/',v.complete),
+    # path('redirect/',include('Dashboard.urls')),
+    path('accounts/',include('django.contrib.auth.urls')),
+    path('accounts/',include('Dashboard.urls')),
     
 
     

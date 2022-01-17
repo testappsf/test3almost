@@ -27,7 +27,7 @@ def terminate(request):
         fm = punches(request.GET)
         link = Linksinfo()
         if fm.is_valid():
-            print('form validated');
+            print('form validated')
             uid = fm.cleaned_data['uid']
             pid = fm.cleaned_data['pid']
             ip = get_client_ip(request)
@@ -41,12 +41,6 @@ def terminate(request):
             link.completionTime= completionTime
             link.status = status
             link.save()
-            print('uid:',fm.cleaned_data['uid'])
-            print('pid:',fm.cleaned_data['pid'])
-            print(systemTime)
-            print(completionTime)
-            print(status)
-            print(get_client_ip(request));
             return render(request,'dashboard/terminate.html',{'UID':uid,'PID':pid,'IP':ip,'sys':systemTime,'comt':completionTime,'STATUS':status})
         else:
             return HttpResponse('<h1> form is valid but unable to punch</h1>')
@@ -78,12 +72,6 @@ def complete(request):
                 link.completionTime= completionTime
                 link.status = status
                 link.save()
-                print('uid:',fm.cleaned_data['uid'])
-                print('pid:',fm.cleaned_data['pid'])
-                print(systemTime)
-                print(completionTime)
-                print(status)
-                # print(get_client_ip(request));
                 return render(request,'dashboard/terminate.html',{'UID':uid,'PID':pid,'IP':ip,'sys':systemTime,'comt':completionTime,'STATUS':status})
         else:
             return HttpResponse('<h1> form is valid but unable to punch</h1>')
@@ -121,13 +109,13 @@ def quotafull(request):
     else:
         return HttpResponse('<h1>Something went Wrong</h1>')
 
-def viewDashboard(request):
-    # if request.method == 'POST':
-    #     fm = request.
-    #     if form.is_valid:
+# def viewDashboard(request):
+#     # if request.method == 'POST':
+#     #     fm = request.
+#     #     if form.is_valid:
 
-    links = ViewLinksData.objects.order_by("id").distinct()
-    return render(request,'dashboard/dashboard.html',{'links':links})
+#     links = ViewLinksData.objects.order_by("id").distinct()
+#     return render(request,'dashboard/dashboard.html',{'links':links})
 
 
 def checkippid(pid,ip):
