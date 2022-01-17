@@ -1,6 +1,3 @@
-from math import pi
-from re import T
-from tkinter.messagebox import NO
 from django.db.models.fields import DateTimeField
 from django.http import HttpResponseRedirect
 from django.shortcuts import render,HttpResponse
