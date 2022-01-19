@@ -1,18 +1,22 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <form action="" method="post">
-        {% csrf_token %}
-        {{form.as_p}}
-        <button type="submit">login</button>
-    </form>
+{% extends '../base/base.html' %}
+{% block title %} login {% endblock title %}
+{% block main %}
 
-    
-</body>
-</html>
+<div class="container pt-5">
+<main class="form-signin">
+    <form method="post" action="">
+      <!-- <img class="mb-4" src="#" alt="" width="72" height="57"> -->
+      <h1 class="h3 mb-3 fw-normal">sign in</h1>
+      {% csrf_token %}
+      <div class="form-floating">
+        {{form.as_p}}
+      </div>
+  
+      
+      <button class="w-30 btn btn-lg btn-primary" type="submit">Sign in</button>
+      
+    </form>
+  </main>
+
+
+{% endblock main %}

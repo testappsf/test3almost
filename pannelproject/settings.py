@@ -24,7 +24,7 @@ TEMPLATES_DIR = BASE_DIR/'templates'
 SECRET_KEY = 'django-insecure-g#%t+#ygu(r&)7+skdqsv4*a_gb706ca91l^)p696#8d(1i3pc'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['dashboard-nextest.herokuapp.com',]
 # ALLOWED_HOSTS = []
@@ -90,6 +90,9 @@ DATABASES = {
     
 }
 
+# LOGIN URLS
+
+LOGOUT_REDIRECT_URL='/'
 
 # Password validation
 # https://docs.djangoproject.com/en/4.0/ref/settings/#auth-password-validators
@@ -126,10 +129,11 @@ USE_TZ = False
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
 
-
-STATIC_URL = 'static/'
 STATIC_DIR =  BASE_DIR/'static'
-# STATICFILES_DIRS =[STATIC_DIR]
+STATIC_URL = '/static/'
+# STATIC_ROOT = '/STATICNew/'
+
+STATICFILES_DIRS =[STATIC_DIR,]
 
 MEDIA_ROOT=BASE_DIR/'media'
 MEDIA_URL='/media/'

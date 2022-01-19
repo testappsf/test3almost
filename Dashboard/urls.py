@@ -1,6 +1,7 @@
 
+from unicodedata import name
 from django.urls import path
-from .views import terminate,quotafull,complete,viewDashboard
+from .views import terminate,quotafull,complete,viewDashboard,export_csv
 
 urlpatterns = [
     # path('terminate/', terminate),
@@ -8,4 +9,6 @@ urlpatterns = [
     # path('complete/',complete),
     path('profile/',viewDashboard),
     # path('dashboard/filter/',filter),
+    path('profile/export',export_csv,name='export-csv')
+    
 ]

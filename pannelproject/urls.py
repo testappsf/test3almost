@@ -13,6 +13,7 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+from unicodedata import name
 from django.contrib import admin
 from django.urls import path,include
 from Dashboard import views as v
@@ -23,7 +24,7 @@ from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from . import settings
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('',v.home),
+    path('',v.home,name='/'),
     path('redirect/terminate/', v.terminate),
     path('redirect/quotafull/',v.quotafull),
     path('redirect/complete/',v.complete),

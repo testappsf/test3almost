@@ -1,0 +1,94 @@
+{% extends '../base/base.html' %}
+{% block title %} dashboard {% endblock title %}
+   
+    {% block main %}
+    
+    
+    <div class="container pt-5">
+        <form class="row gy-2 gx-3 align-items-center" method="POST">
+            {% csrf_token %}
+            <div class="col-auto">
+              <label class="visually-hidden" for="PID">PID</label>
+              <input type="text" name="p_id" class="form-control" id="PID" placeholder="PID">
+            </div>
+            <div class="col-auto">
+              <label class="visually-hidden" for="_UID">UID</label>
+              <div class="input-group">
+                <div class="input-group-text">_UID</div>
+                <input type="text" name="u_ide" class="form-control" id="_UID" placeholder="UID Ends-with">
+              </div>
+            </div>
+            <div class="col-auto">
+              <label class="visually-hidden" for="UID_">UID</label>
+              <div class="input-group">
+                <div class="input-group-text">UID_</div>
+                <input type="text" name="u_ids" class="form-control" id="UID_" placeholder="UID starts-with">
+              </div>
+            </div>
+            <div class="col-auto">
+              <label class="visually-hidden" for="DATE">DATE</label>
+              <div class="input-group">
+                <div class="input-group-text">Date</div>
+                <input type="date" name="date" class="form-control" id="autoSizingInputGroup" placeholder="Date">
+              </div>
+            </div>
+            <div class="col-auto">
+              <label class="visually-hidden" for="autoSizingSelect">Status</label>
+              <select class="form-select" id="autoSizingSelect" name="status">
+                <option style="display: none;" selected value="" >Status...</option>
+                <option value="complete">complete</option>
+                <option value="terminate">Terminate</option>
+                <option value="quotafull">Quotafull</option>
+              </select>
+            </div>
+            
+            <div class="col-auto">
+              <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+          </form>
+          <a href="{% url 'export-csv' %}" class="btn btn-secondary">export</a>
+        <div class="table-responsive pt-5">
+            <table class=" table  table-hover">
+                <thead class="thead">
+                  <tr>
+                    <th scope="col">Serial NO.</th>
+                    <th scope="col">Project ID</th>
+                    <th scope="col">User ID</th>
+                    <th scope="col">status</th>
+                    <th scope="col">IP Address</th>
+                    <th scope="col">System Time</th>
+                    <th scope="col">completion time Time</th>
+                    
+                  </tr>
+                </thead>
+                <tbody>
+                    {% for i in page_obj %}
+                  <tr>
+                    <td>{{forloop.counter}}</td>
+                    <td> {{i.pid}}</td>
+                    <td> {{i.uid}}</td>
+                    <td>{{i.status}}</td>
+                    <td>{{i.ip}}</td>
+                    <td>{{i.systemTime}}</td>
+                    <td>{{i.completionTime}}</td>
+                  </tr>
+                  {% endfor %}
+                </tbody>
+              </table>
+              
+        </div>
+        <span>Total ({{page_obj.paginator.count}})</span>
+        <span class="text-alig-center">
+        
+            {% if page_obj.has_previous %}
+            <a href="?page={{page_obj.previous_page_number}}">prev.</a>
+            {% endif %}
+            <span>{{page_obj.number}} {{page_obj}}</span>
+            {% if page_obj.has_next %}
+            <a href="?page={{page_obj.next_page_number}}">next</a>
+            {% endif %}
+        </span>
+    </div>
+    
+
+{% endblock main %}

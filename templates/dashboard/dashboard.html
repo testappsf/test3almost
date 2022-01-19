@@ -16,6 +16,7 @@
         <input type="text" name="p_id" id="Uid">
         <button type="submit">filter</button>
     </form>
+    <a href="{% url 'export-csv' %}">export</a>
     <table border="1">
         <tr>
             <th>S No.</th>
@@ -30,7 +31,7 @@
         
         {% for i in page_obj %}
         <tr>
-            <td>1</td>
+            <td>{{forloop.counter}}</td>
             <td> {{i.uid}}</td>
             <td> {{i.pid}}</td>
             <td>{{i.status}}</td>
