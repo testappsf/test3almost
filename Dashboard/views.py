@@ -33,7 +33,7 @@ def terminate(request):
             systemTime = datetime.datetime.today()
             completionTime= datetime.datetime.now()
             status = 'Terminate'
-            if(checkippid(pid,ip) == True):
+            if(checkippid(uid,ip) == True):
                 return HttpResponse("<h1> Same IP found </h1>")
             else:
                 link.uid = uid
@@ -62,7 +62,7 @@ def complete(request):
             systemTime = datetime.datetime.today()
             completionTime= datetime.datetime.today()
 
-            if(checkippid(pid,ip) == True):
+            if(checkippid(uid,ip) == True):
                 return HttpResponse("<h1> Same IP found </h1>")
             else:
                 status = 'complete'
@@ -91,7 +91,7 @@ def quotafull(request):
             systemTime = datetime.datetime.today()
             completionTime= datetime.datetime.today()
             status = 'QuotaFull'
-            if(checkippid(pid,ip) == True):
+            if(checkippid(uid,ip) == True):
                 return HttpResponse("<h1> Same IP found </h1>")
             else:
                 link.uid = uid
