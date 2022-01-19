@@ -130,7 +130,7 @@ USE_TZ = False
 
 
 STATIC_DIR =  BASE_DIR/'static'
-STATIC_URL = '/static/'
+STATIC_URL = 'static/'
 # STATIC_ROOT = '/STATICNew/'
 
 STATICFILES_DIRS =[STATIC_DIR,]
