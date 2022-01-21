@@ -25,12 +25,8 @@ from . import settings
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',v.home,name='/'),
-    path('redirect/terminate/', v.terminate),
-    path('redirect/quotafull/',v.quotafull),
-    path('redirect/complete/',v.complete),
-    # path('redirect/',include('Dashboard.urls')),
+    path('redirect/',include('Dashboard.urls')),
     path('accounts/',include('django.contrib.auth.urls')),
-    path('accounts/',include('Dashboard.urls')),
     
 
     

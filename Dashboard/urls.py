@@ -1,14 +1,14 @@
 
 from unicodedata import name
 from django.urls import path
-from .views import terminate,quotafull,complete,viewDashboard,export_csv
+from .views import surveydata,viewDashboard,export_csv
 
 urlpatterns = [
-    # path('terminate/', terminate),
-    # path('quotafull/',quotafull),
-    # path('complete/',complete),
-    path('profile/',viewDashboard),
+    path('terminate/', surveydata,{'check':'terminate'}),
+    path('quotafull/',surveydata,{'check':'quotafull'}),
+    path('complete/',surveydata,{'check':'complete'}),
+    path('profile/',viewDashboard,name='dashboard'),
     # path('dashboard/filter/',filter),
-    path('profile/export',export_csv,name='export-csv')
+    path('profile/export',export_csv,name='export-csv'),
     
 ]

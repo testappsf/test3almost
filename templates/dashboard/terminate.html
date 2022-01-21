@@ -1,33 +1,34 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends '../base/base.html' %}
+{% block title %} dashboard {% endblock title %}
+   
+    {% block main %}
+    <div class="container">
+<div class="table-responsive pt-5">
+    <table class=" table  table-hover">
+        <thead class="thead">
+          <tr>
+            
+            <th scope="col">Project ID</th>
+            <th scope="col">User ID</th>
+            <th scope="col">status</th>
+            <th scope="col">IP Address</th>
+            <th scope="col">completion time Time</th>
+            
+          </tr>
+        </thead>
+        <tbody>
+            
+          <tr>
+            <td> {{PID}}</td>
+            <td> {{UID}}</td>
+            <td>{{STATUS}}</td>
+            <td>{{IP}}</td>
+            <td>{{comt}}</td>
+          </tr>
+        </tbody>
+      </table>
+      
+</div>
+</div>
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{STATUS}}</title>
-</head>
-
-<h1>{{STATUS}}</h1>
-   <li>{{UID}}
-</li> 
-<li>
-    {{PID}}
-</li>
-<li>
-    {{IP}}  
-</li>
-<li>{{STATUS}}</li>
-<li>{{syt}}</li>
-<li>
-    {{comt}}
-</li>
-</ol>
-{{UID}}
-{{PID}}
-{{IP}}
-{{syt}}
-{{comt}}
-</body>
-
-</html>
+{% endblock main %}
