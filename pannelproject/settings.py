@@ -24,7 +24,7 @@ TEMPLATES_DIR = BASE_DIR/'templates'
 SECRET_KEY = 'django-insecure-g#%t+#ygu(r&)7+skdqsv4*a_gb706ca91l^)p696#8d(1i3pc'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['dashboard-nextest.herokuapp.com',]
 # ALLOWED_HOSTS = []
@@ -153,3 +153,11 @@ import django_heroku
 django_heroku.settings(locals())
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
+
+SESSION_COOKIE_AGE =3600
+SESSION_SAVE_EVERY_REQUEST = True
+
+SESSION_EXPIRE_AT_BROWSER_CLOSE = True
+
+SESSION_COOKIE_SECURE =True
