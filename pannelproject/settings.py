@@ -24,7 +24,7 @@ TEMPLATES_DIR = BASE_DIR/'templates'
 SECRET_KEY = 'django-insecure-g#%t+#ygu(r&)7+skdqsv4*a_gb706ca91l^)p696#8d(1i3pc'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['dashboard-nextest.herokuapp.com',]
 # ALLOWED_HOSTS = []
