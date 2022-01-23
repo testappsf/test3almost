@@ -23,7 +23,8 @@ def home(request):
     return render(request,'home.html')
     
 def checkippid(uid,ip,pid):
-    linkcheck= Linksinfo.objects.filter((Q(uid__iexact=uid) & Q(ip=ip)) |(Q(pid__exact=pid) & Q(uid__exact=uid)))
+    linkcheck= Linksinfo.objects.filter((Q(pid__iexact=pid) & Q(ip=ip)) |(Q(pid__exact=pid) & Q(uid__exact=uid)))
+    print(linkcheck)
     return linkcheck.exists()
 
 @login_required
