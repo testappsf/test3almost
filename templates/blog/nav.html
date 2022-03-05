@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+{% load static %}
+<head>
+    <!-- Template Main CSS File -->
+    <link href="{% static 'blog/css/style.css' %}" rel="stylesheet">
+    <link href="{% static 'blog/css/custom-style.css' %}" rel="stylesheet">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <style>
+        .top-bar {
+      padding: 5px 0px;
+      background: #333;
+  }
+    </style>
+</head>
+
+<herader>
+  <nav class="navbar navbar-expand-lg navbar-dark  {% block fixed %} fixed-top {% endblock fixed %} bg-dark"  class="mobile-nav d-lg-none">
+      <div class="container-fluid">
+        
+        <a class="navbar-brand">User Pannel</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav">
+            
+            {% if request.user.is_authenticated %}
+            <a class="nav-link" href="{% url 'dashboard' %}">Dashboard</a>
+            <a class="nav-link" href="{% url 'password_change' %}">Password Manager</a>
+            <a class="nav-link" href="{% url 'logout' %}">LOGOUT</a>
+            {% else %}
+            {% comment %} <a class="nav-link active" aria-current="page" href="{% url 'login'%}">LOGIN</a> {% endcomment %}
+            <a class="nav-link active" aria-current="page" href="{% url '/'%}">HOME</a>
+            <a class="nav-link active" aria-current="page" href="{% url 'about'%}">About Us</a>
+            <a class="nav-link active" aria-current="page" href="{% url 'services'%}">Services</a>
+            <a class="nav-link active" aria-current="page" href="{% url 'contact'%}">Contact Us</a>
+            {% endif %}
+            
+          
+          
+          
+            
+            
+            
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <!-- Template Main JS File -->
+  <script src="{% static 'blog/js/main.js' %}"></script>

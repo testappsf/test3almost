@@ -1,0 +1,63 @@
+{% extends 'blog/base.html' %}
+{% load static %}
+{% block content%}
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Profile</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="">
+</head>
+        
+    
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->  
+        
+    <div class="container pt-5">
+        <div class="row">
+            <p><h1 class="text-center alert alert-info">User Profile</h1></p>
+            <div class="col-sm-5">
+                <div class="alert alert-success" role="alert">
+                        <h4 class="alert-heading">Welcome</h4>{{name}}
+                        <p>Aww yeah, you successfully login to your profile.</p>
+                        <hr>
+                        <p class="mb-0">Here you can change your account details like your (Username) and some other things.</p>
+                </div>
+                    {% comment %} <div class="alert alert-info"> {% endcomment %}
+                    {% comment %} <h4>Welcome-</h4>{{name}} {% endcomment %}
+                    {% comment %} </div> {% endcomment %}
+                    {% if messages %}
+                    {% for message in messages %}
+                        <p {% if message.tags %} class="alert alert-{{message.tags}} mb-5"{% endif %}>
+                        {{message}}}</p>
+                    {% endfor %}
+                    {% endif %}
+                    <form action="" method="POST" novalidate>
+                        {% csrf_token %}
+                        {% for fm in form %}
+                        
+                        <div  class="form-table" >
+                            <li>{{fm.label_tag}} {{fm}} <small class="text-warning"> {{fm.errors|striptags}}</small></li><br>
+                        </div>
+                        {% endfor %}
+                        <input type="submit" class="btn btn-success" value="Submit">
+                        {% if form.non_fields_errors %}
+                        {% for error in form.non_fields_errors %}
+                        <p class="alert alert-danger my-3">{{errors}}</p>
+                        {% endfor %}
+                        {% endif %}
+                    </form>
+                    <script src="" async defer></script>
+                </div>
+                {% comment %} <div class="col-sm-1"></div> {% endcomment %}
+                <div class="col-sm-1"></div>
+                <div class="col-sm-5 mt-5">
+                    <div>
+                      <img src="{% static 'blog/images/profile.jfif' %}" class="img-fluid"  width='520' height='400'/ >
+                    </div>
+                </div>
+        </div>
+    </div>           
+{% endblock content %}

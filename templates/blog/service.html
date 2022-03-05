@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  
+    <title>Question Quest</title>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+  
+    <!-- Favicons -->
+    <link href="" rel="icon">
+    <link href="" rel="apple-touch-icon">
+  
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,600,600i,700,700i,900" rel="stylesheet">
+  
+    <!-- Vendor CSS Files -->
+    <link href="{% static 'blog/css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'blog/css/icofont.min.css' %}" rel="stylesheet">
+    <link href="https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css" rel="stylesheet">
+    <link href="{% static 'blog/css/animate.min.css' %}" rel="stylesheet">
+    <link href="{% static 'blog/css/venobox.css' %}" rel="stylesheet">
+    <link href="{% static 'blog/css/owl.carousel.min.css' %}" rel="stylesheet">
+    <link href="{% static 'blog/css/aos.css' %}" rel="stylesheet">
+  
+  
+    <!-- Template Main CSS File -->
+    <link href="{% static 'blog/css/style.css' %}" rel="stylesheet">
+    <link href="{% static 'blog/css/custom-style.css' %}" rel="stylesheet">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous">
+    <style>
+        .top-bar {
+      padding: 5px 0px;
+      background: #333;
+  }
+    </style>
+  </head>
+  
+  <body data-aos-easing="ease-in-out-back" data-aos-duration="1000" data-aos-delay="0"><button type="button" class="mobile-nav-toggle d-lg-none"><i class="icofont-navigation-menu"></i></button>
+  
+    
+      <div class="top-bar">
+  <div class="container">
+  <div class="row">
+  <div class="col-12">
+  <a href="#" class=""><i class="mr-2 fas fa-envelope" style="color: #fff"></i> <span class="d-none d-md-inline-block text-white">business@credencuesta.com</span></a>
+  <span class="mx-md-2 d-inline-block"></span>
+  <a href="#" class=""><i class="mr-2 fas fa-phone-alt" style="color: #fff"></i> <span class="d-none d-md-inline-block text-white">+91 7982406915</span></a>
+  <div class="float-right">
+  <a href="#" class=""><i class="mr-2 fab fa-twitter" style="color: #fff"></i> <span class="d-none d-md-inline-block text-white">Twitter</span></a>
+  <span class="mx-md-2 d-inline-block"></span>
+  <a href="#" class=""><i class="mr-2 fab fa-facebook" style="color: #fff"></i> <span class="d-none d-md-inline-block text-white">Facebook</span></a>
+  </div>
+  </div>
+  </div>
+  </div>
+  </div>
+    <!-- ======= Header ======= -->
+    <div id="header">
+      <div class="container">
+  
+        <div class="logo float-left">
+          <!-- Uncomment below if you prefer to use an image logo -->
+           <a href="/" style="overflow: hidden;display: inline-block;" class="top-heading">Question Quest</a>
+        </div>
+  
+        <nav class="nav-menu float-right d-none d-lg-block">
+          <ul>
+            <li class=""><a href="/">Home</a></li>
+            {% if request.user.is_authenticated %}
+          
+          <li class="active"><a href="{% url 'dashboard' %}">Dashboard</a></li>
+          {% else %}
+          <li class="active"><a href="{% url 'login'%}">Login</a></li>
+          {% endif %}
+            <li class=""><a href="/about">About Us</a></li>
+            <li class="active"><a href="/services">Services</a></li>
+            <li class=""><a href="/contact">Contact Us</a></li>
+          </ul>
+        </nav><!-- .nav-menu -->
+  
+      </div>
+    </header></div><!-- End Header -->
+  
+    
+   <!-- ======= Service Section ======= -->
+      <section id="b2b" class="about">
+        <div class="container">
+  
+          <div class="row no-gutters">
+  
+            <div class="col-lg-12 d-flex flex-column justify-content-center about-content">
+  
+              <div class="section-title">
+                <h2 class="text-left">‣ B2B RESEARCH</h2>
+                <p>Question Quest is learned about driving B2B factual looking over in various endeavors.</p>
+                <p>Question Quest brings you online B2B research, the supported choice for top type, a reliable business-to-business online model with permission to respondents in various countries.</p> 
+                <p>We can achieve high volumes of responses from senior and normally difficult to show up at individuals, including division heads and C-level bosses, business people and specialists in IT, HR, Finance, Sales, Retail similarly as tradespeople including jack of all trades, painters and circuit analyzers.</p>
+                <p>We can work with you to find the correct respondent and assemble the data you need through a blend of methodology that joins outbound calls, inbound correlative lines, fax/mail welcoming, and online investigations.</p>
+                <p>Whether or not your association is expecting to enter another market, an increasing slice of the pie, make another brand, choose the satisfaction of your customers or delegates, center around your business areas even more capably, develop another thing or test the practicality of and Advertising exertion, Magnifine investigation can get it done.</p>
+          <div class="custom-list-one">
+                <h2 class="text-left">‣ Our experience incorporates:</h2>
+                <ul class="text-left">
+                  <li>Agriculture</li>
+                  <li>Design, Building, and Contractors</li>
+                  <li>Banking and Finance</li>
+                  <li>Government</li>
+                  <li>Hospitality</li>
+                  <li>Media</li>
+                  <li>Political</li>
+                  <li>Transportation and Freight</li>
+                  <li>Medical services and Healthcare Products</li>
+                  <li>Schedule H Drug items</li>
+                </ul>
+              </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- End Service Section -->
+  
+       <!-- ======= Service Section ======= -->
+      <section id="health_care" class="about">
+        <div class="container">
+  
+          <div class="row no-gutters">
+  
+            <div class="col-lg-12 d-flex flex-column justify-content-center about-content">
+  
+              <div class="section-title">
+                <h2 class="text-left">‣ HEALTHCARE RESEARCH</h2>
+                <p>Magnifine RESEARCH Healthcare Research has been giving quality statistical surveying administrations to the drug and medical services industry. As your accomplice, we are put resources into furnishing you with a significant degree of administration and scrupulousness with our center focused on your examination objectives and friends destinations.</p>
+                <p>Our broad medical care industry ability and thorough information assortment administrations guarantee that we reliably surpass customer assumptions. Drug, biotechnology, medical services research firms, clinics, insurance agencies.
+          </p>
+              </div>
+              <div class="section-title">
+                <h2 class="text-left">‣ Research Methodologies</h2>
+                <ul class="text-left">
+                  <li>Quantitative CATI physician interviews</li>
+                  <li>In-Depth Physician Phone Interviews</li>
+                  <li>Web Surveys</li>
+                  <li>Patient Chart Studies</li>
+                  <li>Inbound and Outbound IVR Surveys</li>
+                  <li>Doctor Panel Recruitment </li>
+                  <li>Hospital Profiling</li>
+                </ul>
+                <p>
+                  Our information base of more than 500,000 doctors, drug specialists, and medical care suppliers is refreshed persistently consistently. Likewise, we keep momentum data on singular medical care suppliers' readiness to partake in explicit exploration projects. These rundowns permit us to extensively abbreviate enlistment time and convey information as productively as could be expected.
+                </p>
+              </div>
+  
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- End Service Section -->
+  
+  
+       <!-- ======= Service Section ======= -->
+      <section id="b2c" class="about">
+        <div class="container">
+  
+          <div class="row no-gutters">
+  
+            <div class="col-lg-12 d-flex flex-column justify-content-center about-content">
+  
+              <div class="section-title">
+                <h2 class="text-left">‣ B2C RESEARCH</h2>
+                <p>Magnifine RESEARCH coordinates an arrangement of buyer research thinks about using CATI phone surveys and online data variety.</p>
+                <p>We have broad experience leading meetings with difficult to reach, specific respondent portions. Prescient dialers are utilized, when proper, to guarantee our shopper examines are savvy and finished on schedule.
+          </p>
+          <p>
+            The investigation methodologies we use are unendingly progressing to mirror the advancing changes in client direct for instance advancement in online investigation procedures to get influence whenever electronic promoting and purchaser online use.
+          </p>
+              </div>
+              <div class="section-title">
+                <h2 class="text-left">The basic Business to Consumer zones we work across fuses:</h2>
+                <ul class="text-left">
+                  <li>Banking</li>
+                  <li>FMCG</li>
+                  <li>Insurance</li>
+                  <li>Retail</li>
+                  <li>Travel</li>
+                  <div class="custom-list-one">
+                   <h2 class="text-left heading-two">‣ Our experience includes:</h2>
+                  <ul>
+                    <li>Customer item research</li>
+                    <li>Consumer loyalty</li>
+                    <li>Assessment surveying</li>
+                    <li>Political surveying</li>
+                    <li>Purchasing propensities</li>
+                    <li>Serious exploration</li>
+                    <li>Sponsorship research</li>
+                    <li>Item testing</li>
+                    <li>Publicizing mindfulness</li>
+                    <li>Following investigations</li>
+                  </ul>
+                  </div>
+                </ul>
+              </div>
+            </div>
+            
+          </div>
+        </div>
+      </section>
+      <!-- End Service Section -->
+  
+  
+       <!-- ======= Service Section ======= -->
+      <section id="information_technology" class="about">
+        <div class="container">
+  
+          <div class="row no-gutters">
+  
+            <div class="col-lg-12 d-flex flex-column justify-content-center about-content">
+  
+              <div class="section-title">
+                <h2 class="text-left">‣ INFORMATION TECHNOLOGY</h2>
+                <p>Magnifine RESEARCH inheritance in advancement research has achieved a telling resource, including a senior-level IT Decision Maker Panel created and kept up by our overall CATI center. Our gathering lead interviews in 55 vernaculars and know about all pieces of PC hardware, programming, benefits similarly as issues of the media correspondences industry. We offer absolute quantitative help, including survey review, study programming, encouraging, and in-house translation, and coding the board for lively turnaround and dependable execution.</p>
+              </div>
+  
+              <div class="section-title custom-list">
+                <h2 class="text-left">‣ Cases of certain responsibility we have endeavored consolidate:</h2>
+                <ul class="text-left">
+                  <li>Market examination for security organizations</li>
+                  <li>Thing/organization pack thought testing</li>
+                  <li>Commercial center necessities for records the board</li>
+                  <li>Assessment of buyer necessities for mechanical assemblies and SaaS things</li>
+                  <li>Examples in specialist use</li>
+                  <li>Message testing for an extent of programming things</li>
+                  <li>Naming for another enrolling thought</li>
+                  <li>Solicitation evaluation and excitement to-pay examination for SIP applications</li>
+                  <li>Buyer lead assessment for hardware, programming and organizations</li>
+                </ul>
+              </div>
+  
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- End Service Section -->
+  
+  
+  
+    <!-- ======= Footer ======= -->
+    <footer id="footer">
+      
+  
+      <div class="container">
+        <div class="copyright">
+          © Copyright <strong><span>Question Quest</span></strong>. All Rights Reserved
+        </div>
+        <div class="text-center"><b>THE WAY YOU THINK WE CAN</b></div>
+      </div>
+    </footer><!-- End Footer -->
+  
+    <a href="#" class="back-to-top" style="display: none;"><i class="icofont-simple-up"></i></a>
+  
+    <!-- Vendor JS Files -->
+    <script src="{% static 'blog/js/jquery.min.js' %}"></script>
+    <script src="{% static 'blog/js/bootstrap.bundle.min.js' %}"></script>
+    <script src="{% static 'blog/js/jquery.easing.min.js' %}"></script>
+    <script src="{% static 'blog/js/validate.js' %}"></script>
+    <script src="{% static 'blog/js/jquery.sticky.js'%}"></script>
+    <script src="{% static 'blog/js/venobox.min.js' %}"></script>
+    <script src="{% static 'blog/js/jquery.waypoints.min.js' %}"></script>
+    <script src="{% static 'blog/js/counterup.min.js' %}"></script>
+    <script src="{% static 'blog/js/owl.carousel.min.js' %}"></script>
+    <script src="{% static 'blog/js/isotope.pkgd.min.js' %}"></script>
+    <script src="{% static 'blog/js/aos.js' %}"></script>
+  
+    <!-- Template Main JS File -->
+    <script src="{% static 'blog/js/main.js' %}"></script><nav class="mobile-nav d-lg-none">
+          <ul>
+            <li class=""><a href="/">Home</a></li>
+            <li class=""><a href="/about">About Us</a></li>
+            <li class=""><a href="/services">Services</a></li>
+            <li class=""><a href="/contact">Contact Us</a></li>
+          </ul>
+        </nav><div class="mobile-nav-overly"></div>
+  
+  
+  
+  </body></html>

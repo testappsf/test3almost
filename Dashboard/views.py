@@ -8,8 +8,14 @@ from django.db.models import Q
 from django.core.paginator import Paginator
 from django.contrib.auth.decorators import login_required
 import csv
+from django.contrib.auth.forms import AuthenticationForm, UserCreationForm,PasswordChangeForm,UserChangeForm
+from .forms import Edituserprofileform,EditAdminprofileform
 
 # Create your views here.
+
+def error_404_view(request,exception):
+    return render(request,'error.html')
+
 def get_client_ip(request):
     x_forwarded_for = request.META.get('HTTP_X_FORWARDED_FOR')
     print(x_forwarded_for)
@@ -20,7 +26,7 @@ def get_client_ip(request):
     return ip
     
 def home(request):
-    return render(request,'home.html')
+    return render(request,'blog/home.html')
     
 def checkippid(uid,ip,pid):
     linkcheck= Linksinfo.objects.filter((Q(pid__iexact=pid) & Q(ip=ip)) |(Q(pid__exact=pid) & Q(uid__exact=uid)))
@@ -101,3 +107,22 @@ def surveydata(request,check):
             return HttpResponse('<h1> Invalid Data</h1>')
     else:
         return HttpResponse('<h1>Something went Wrong</h1>')
+
+def user_profile(request):
+    if request.user.is_authenticated:
+        if request.method=="POST":
+            if request.user.is_superuser==True:
+                fm=EditAdminprofileform(instance=request.user)
+            else:
+                fm=Edituserprofileform(request.POST,instance=request.user)
+            if fm.is_valid():
+                messages.success(request,'Profile Updated !!!')
+                fm.save()
+        else:
+            if request.user.is_superuser==True:
+                fm=EditAdminprofileform(instance=request.user)
+            else:   
+                fm=Edituserprofileform(instance=request.user)
+        return render(request,'registration/profile.html', {'name':request.user.username,'form':fm})
+    else:
+        return HttpResponseRedirect('/login/')

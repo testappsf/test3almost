@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 """
 
 from pathlib import Path
-
+import os
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 TEMPLATES_DIR = BASE_DIR/'templates'
@@ -21,13 +21,18 @@ TEMPLATES_DIR = BASE_DIR/'templates'
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-g#%t+#ygu(r&)7+skdqsv4*a_gb706ca91l^)p696#8d(1i3pc'
+
+with open(os.path.join(BASE_DIR,'secret_key.txt')) as f:
+    SECRET_KEY = f.read().strip()
+
+
+# SECRET_KEY = 'django-insecure-g#%t+#ygu(r&)7+skdqsv4*a_gb706ca91l^)p696#8d(1i3pc'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['dashboard-nextest.herokuapp.com',]
-# ALLOWED_HOSTS = []
+# ALLOWED_HOSTS = ['dashboard-nextest.herokuapp.com',]
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -81,14 +86,22 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
-        # 'NAME':'vaibhavpannel',
-        # 'USER':'root',
-        # 'PASSOWRD': '',
-        # 'HOST': 'localhost',
-        # 'PORT':5555
+        
     }
     
 }
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.mysql',
+#         'NAME':'vaibhav',
+#         'USER':'root',
+#         'PASSOWRD': '',
+#         'HOST': 'localhost',
+#         'PORT':'3306'
+#     }
+    
+# }
 
 # LOGIN URLS
 
@@ -132,7 +145,7 @@ USE_TZ = False
 
 STATIC_DIR =  BASE_DIR/'static'
 STATIC_URL = 'static/'
-# STATIC_ROOT = '/STATICNew/'
+STATIC_ROOT = '/STATICnew/'
 
 STATICFILES_DIRS =[STATIC_DIR,]
 
@@ -161,3 +174,12 @@ SESSION_SAVE_EVERY_REQUEST = True
 SESSION_EXPIRE_AT_BROWSER_CLOSE = True
 
 SESSION_COOKIE_SECURE =True
+
+# # HTTPS SETTINGS
+# CSRF_COOKIE_SECURE =True
+# SECURE_SSL_REDIRECT =True
+
+# # #HSTS settings
+# SECURE_HSTS_SECONDS= 31536000
+# SECURE_HSTS_PRELOAD =True
+# SECURE_HSTS_INCLUDE_SUBDOMAINS = True

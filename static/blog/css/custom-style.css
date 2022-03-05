@@ -1,0 +1,54 @@
+.custom-list ul {
+  list-style: none;
+  padding: 10px;
+}
+
+.custom-list ul li:before {
+  content: 'âœ“';
+  font-size: 25px;
+  margin: 10px 10px;
+  padding: 0px 5px;
+  color: #302e4e;
+}
+.custom-list-one ul {
+  list-style: none;
+  padding: 10px;
+}
+
+.custom-list-one ul li:before {
+  content: 'âœ“';
+  font-size: 25px;
+  margin: 10px 10px;
+  padding: 0px 5px;
+}
+.custom-list .heading-two
+{
+    font-size: 30px;
+    font-weight: 600;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding-bottom: 0;
+    color: #5c768d;
+}
+.section-title h2 {
+    padding: 15px;
+    font-size: 32px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    padding-bottom: 0;
+    color: #363453;
+}
+.section-title p
+{
+	margin-bottom: 10px;
+}
+.top-heading {
+    font-size:30px;
+    font-weight: 600;
+}
+.top-heading:hover {
+    color:#00adff;
+}
+.form-group {
+        margin-bottom: 2rem;
+}

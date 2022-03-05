@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+{% load static %}
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href=" {% static 'blog/css/bootstrap.css' %}">
+        <link rel="stylesheet" href=" {% static 'blog/css/style.css' %}">
+        
+        <!-- Vendor CSS Files -->
+        <link href="{% static 'blog/css/bootstrap.min.css' %}" rel="stylesheet">
+        <link href="{% static 'blog/css/icofont.min.css' %}" rel="stylesheet">
+        <link href="https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css" rel="stylesheet">
+        <link href="{% static 'blog/css/animate.min.css' %}" rel="stylesheet">
+        <link href="{% static 'blog/css/venobox.css' %}" rel="stylesheet">
+        <link href="{% static 'blog/css/owl.carousel.min.css' %}" rel="stylesheet">
+        <link href="{% static 'blog/css/aos.css' %}" rel="stylesheet">
+
+        <!-- Template Main CSS File -->
+        <link href="{% static 'blog/css/style.css' %}" rel="stylesheet">
+        <link href="{% static 'blog/css/custom-style.css' %}" rel="stylesheet">
+        <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+        <style>
+            .top-bar {
+            padding: 5px 0px;
+            background: #333;
+        }
+        </style>
+        
+       
+    </head>
+    <body>
+        <div class="container-fluid bg-dark">
+            {% include 'blog/nav.html'%}
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    {% block msg %}
+
+                    {% endblock msg %}
+                </div>
+            </div>
+            <div class="row">
+                {% block side%}
+                {% endblock side%}
+
+                {% block content%}
+                
+                {% endblock content%}
+            </div>
+        </div>
+        
+        {% comment %} <script src="{% static 'js/jquery-3.6.0.min.js'%}" ></script> {% endcomment %}
+        <script src="{% static 'js/popper.min.js'%}" ></script>
+        <script src="{% static 'js/bootstrap.min.js'%}" ></script>
+
+        <!-- Vendor JS Files -->
+        <script src="{% static 'js/jquery-3.6.0.min.js' %}"></script>
+        <script src="{% static 'blog/js/jquery.min.js' %}"></script>
+        <script src="{% static 'blog/js/bootstrap.bundle.min.js' %}"></script>
+        <script src="{% static 'blog/js/jquery.easing.min.js' %}"></script>
+        <script src="{% static 'blog/js/validate.js' %}"></script>
+        <script src="{% static 'blog/js/jquery.sticky.js'%}"></script>
+        <script src="{% static 'blog/js/venobox.min.js' %}"></script>
+        <script src="{% static 'blog/js/jquery.waypoints.min.js' %}"></script>
+        <script src="{% static 'blog/js/counterup.min.js' %}"></script>
+        <script src="{% static 'blog/js/owl.carousel.min.js' %}"></script>
+        <script src="{% static 'blog/js/isotope.pkgd.min.js' %}"></script>
+        <script src="{% static 'blog/js/aos.js' %}"></script>
+
+        <!-- Template Main JS File -->
+        <script src="{% static 'blog/js/main.js' %}"></script>
+    </body>
+</html>
